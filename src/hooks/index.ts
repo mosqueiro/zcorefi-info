@@ -7,10 +7,16 @@ import copy from 'copy-to-clipboard'
 
 export function useColor(tokenAddress, token) {
   const [color, setColor] = useState('#2172E5')
+  let path
   if (tokenAddress) {
-    const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
+    path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
       tokenAddress
     )}/logo.png`
+
+    if(tokenAddress?.toLowerCase() === '0x1f01dc57c66c2f87d8eab9c625d335e9defe6912'){
+      path = 'https://zcore.network/coins/ZCR.png'
+    }
+
     if (path) {
       Vibrant.from(path).getPalette((err, palette) => {
         if (palette && palette.Vibrant) {

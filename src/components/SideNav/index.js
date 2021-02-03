@@ -164,16 +164,31 @@ function SideNav({ history }) {
           <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
             <HeaderText>
               <Link href="https://pancakeswap.finance/" target="_blank">
+                BSCEx Swap
+              </Link>
+            </HeaderText>
+            <HeaderText>
+              <Link href="https://swapv1.bscex.org/#/pool" target="_blank">
+                BSCEx Liquidity
+              </Link>
+            </HeaderText>              
+            <HeaderText>
+              <Link href="https://pancakeswap.finance/" target="_blank">
                 PancakeSwap
               </Link>
             </HeaderText>
             <HeaderText>
-              <Link href="https://docs.pancakeswap.finance/" target="_blank">
-                Docs
+              <Link href="https://pancakeswap.finance/" target="_blank">
+                Pancake Liquidity
+              </Link>
+            </HeaderText>            
+            <HeaderText>
+              <Link href="http://zcore.fi/" target="_blank">
+                ZCore DeFi
               </Link>
             </HeaderText>
             <HeaderText>
-              <Link href="https://twitter.com/PancakeSwap " target="_blank">
+              <Link href="https://twitter.com/zcorecrypto" target="_blank">
                 Twitter
               </Link>
             </HeaderText>

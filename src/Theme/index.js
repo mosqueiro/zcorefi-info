@@ -222,6 +222,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 }
 
+img {
+  background-color:transparent !important;
+}
 
   html {
     font-size: 1rem;

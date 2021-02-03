@@ -40,16 +40,16 @@ export function getTimeframe(timeWindow) {
 export function getPoolLink(token0Address, token1Address = null, remove = false) {
   if (!token1Address) {
     return (
-      `https://exchange.pancakeswap.finance/#/` +
+      `https://swapv1.bscex.org/#/` +
       (remove ? `remove` : `add`) +
-      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${'ETH'}`
+      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token0Address}/${'0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c'}`
     )
   } else {
     return (
-      `https://exchange.pancakeswap.finance/#/` +
+      `https://swapv1.bscex.org/#/` +
       (remove ? `remove` : `add`) +
-      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address}/${
-        token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address
+      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token0Address}/${
+        token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token1Address
       }`
     )
   }
@@ -57,11 +57,11 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
 
 export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
-    return `https://exchange.pancakeswap.finance/#/swap?inputCurrency=${token0Address}`
+    return `https://swapv1.bscex.org/#/swap?inputCurrency=${token0Address}&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c`
   } else {
-    return `https://exchange.pancakeswap.finance/#/swap?inputCurrency=${
-      token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token0Address
-    }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? 'ETH' : token1Address}`
+    return `https://swapv1.bscex.org/#/swap?inputCurrency=${
+      token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token0Address
+    }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token1Address}`
   }
 }
 

@@ -12,7 +12,7 @@ export const timeframeOptions = {
 
 // token list urls to fetch tokens from - use for warnings on tokens and pairs
 export const SUPPORTED_LIST_URLS__NO_ENS = [
-  'https://raw.githubusercontent.com/pancakeswap/pancake-swap-interface/master/src/constants/token/pancakeswap.json',
+  'https://gist.githubusercontent.com/mosqueiro/7fdb03b3ce24bc194d17cafcb526ba07/raw/0017eae2dd637288ccce9189bd1bae07e2e20ac0/pancakeswap.json',
 ]
 
 // hide from overview list

@@ -70,9 +70,20 @@ export default function TokenLogo({ address, header = false, size = '24px', ...r
     )
   }
 
-  const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
+  let path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
     address
   )}/logo.png`
+
+
+if (address?.toLowerCase() === '0x1f01dc57c66c2f87d8eab9c625d335e9defe6912') {
+  path = 'https://zcore.network/coins/ZCR.png'
+}
+
+
+if (address?.toLowerCase() === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c') {
+  path = 'https://zcore.network/coins/WBNB.png'
+}
+
 
   return (
     <Inline>
