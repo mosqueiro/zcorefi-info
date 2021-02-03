@@ -163,7 +163,7 @@ function SideNav({ history }) {
           </AutoColumn>
           <AutoColumn gap="0.5rem" style={{ marginLeft: '.75rem', marginBottom: '4rem' }}>
             <HeaderText>
-              <Link href="https://pancakeswap.finance/" target="_blank">
+              <Link href="https://swapx.bscex.org/#/" target="_blank">
                 BSCEx Swap
               </Link>
             </HeaderText>
@@ -173,12 +173,12 @@ function SideNav({ history }) {
               </Link>
             </HeaderText>              
             <HeaderText>
-              <Link href="https://pancakeswap.finance/" target="_blank">
+              <Link href="https://exchange.pancakeswap.finance/#/swap" target="_blank">
                 PancakeSwap
               </Link>
             </HeaderText>
             <HeaderText>
-              <Link href="https://pancakeswap.finance/" target="_blank">
+              <Link href="https://exchange.pancakeswap.finance/#/pool" target="_blank">
                 Pancake Liquidity
               </Link>
             </HeaderText>            
