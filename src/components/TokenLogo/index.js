@@ -84,6 +84,10 @@ if (address?.toLowerCase() === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c') {
   path = 'https://zcore.network/coins/WBNB.png'
 }
 
+if (address?.toLowerCase() === '0x4495e673ee53c61ce79c35d5e299733639362aec') {
+  path = 'https://zcore.network/coins/LQX.png'
+}
+
 
   return (
     <Inline>

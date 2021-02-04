@@ -17,6 +17,10 @@ export function useColor(tokenAddress, token) {
       path = 'https://zcore.network/coins/ZCR.png'
     }
 
+    if(tokenAddress?.toLowerCase() === '0x4495e673ee53c61ce79c35d5e299733639362aec'){
+      path = 'https://zcore.network/coins/LQX.png'
+    }    
+
     if (path) {
       Vibrant.from(path).getPalette((err, palette) => {
         if (palette && palette.Vibrant) {
