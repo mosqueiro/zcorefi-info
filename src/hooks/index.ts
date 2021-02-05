@@ -19,7 +19,15 @@ export function useColor(tokenAddress, token) {
 
     if(tokenAddress?.toLowerCase() === '0x4495e673ee53c61ce79c35d5e299733639362aec'){
       path = 'https://zcore.network/coins/LQX.png'
-    }    
+    }
+
+    if(tokenAddress?.toLowerCase() === '0xa5594a2caf790c8eeb9037ab18d0da305bbdc8b6'){
+      path = 'https://zcore.network/coins/ZYON.png'
+    }
+
+    if(tokenAddress?.toLowerCase() === '0xf0ebeb79792190a1be089c522c82e724a4f8c8f1'){
+      path = 'https://zcore.network/coins/PEPS.png'
+    }
 
     if (path) {
       Vibrant.from(path).getPalette((err, palette) => {
