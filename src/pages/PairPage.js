@@ -168,15 +168,54 @@ function PairPage({ pairAddress, history }) {
 
   // token data for usd
   const [ethPrice] = useEthPrice()
-  const token0USD =
-    token0?.derivedETH && ethPrice ? formattedNum(parseFloat(token0.derivedETH) * parseFloat(ethPrice), true) : ''
+  
+  let token0USD = token0?.derivedETH && ethPrice ? formattedNum(parseFloat(token0.derivedETH) * parseFloat(ethPrice), true) : 0
+  let token1USD = token1?.derivedETH && ethPrice ? formattedNum(parseFloat(token1.derivedETH) * parseFloat(ethPrice), true) : 0
 
-  const token1USD =
-    token1?.derivedETH && ethPrice ? formattedNum(parseFloat(token1.derivedETH) * parseFloat(ethPrice), true) : ''
+  const token0USDZCR = token0?.derivedETH && ethPrice ? (parseFloat(token0.derivedETH) * parseFloat(ethPrice)) : 0
+  const token1USDZCR = token1?.derivedETH && ethPrice ? (parseFloat(token1.derivedETH) * parseFloat(ethPrice)) : 0
+
+
 
   // rates
   const token0Rate = reserve0 && reserve1 ? formattedNum(reserve1 / reserve0) : '-'
   const token1Rate = reserve0 && reserve1 ? formattedNum(reserve0 / reserve1) : '-'
+
+  const token0RateZCR = reserve0 && reserve1 ? (reserve1 / reserve0) : 0
+  const token1RateZCR = reserve0 && reserve1 ? (reserve0 / reserve1) : 0
+
+  
+  
+  // Force Price by ZCore Developer (https://zcore.fi)
+
+  //console.log('#################################')
+  //console.log('token0USD: ' + token0USDZCR)
+  //console.log('token1USD: ' + token1USDZCR)
+
+  //console.log('token0Rate: ' + token0RateZCR)
+  //console.log('token1Rate: ' + token1RateZCR)
+
+  const Price1 = (parseFloat(token0USDZCR) * parseFloat(token1RateZCR));
+  const Price0 = (parseFloat(token1USDZCR) * parseFloat(token0RateZCR));
+
+  //console.log('Price0: ' + Price0)
+  //console.log('Price1: ' + Price1)
+
+  if(token0USDZCR === 0){
+    token0USD = formattedNum(Price0 , true);
+  }
+
+
+  if(token1USDZCR === 0){
+    token1USD = formattedNum(Price1 , true);
+  }  
+
+  //console.log('New token0USD: ' + token0USD)
+  //console.log('New token1USD: ' + token1USD)
+
+  //console.log('#################################')
+
+  
 
   // formatted symbols for overflow
   const formattedSymbol0 = token0?.symbol.length > 6 ? token0?.symbol.slice(0, 5) + '...' : token0?.symbol
@@ -298,9 +337,7 @@ function PairPage({ pairAddress, history }) {
                   <TokenLogo address={token0?.id} size={'16px'} />
                   <TYPE.main fontSize={'16px'} lineHeight={1} fontWeight={500} ml={'4px'}>
                     {token0 && token1
-                      ? `1 ${formattedSymbol0} = ${token0Rate} ${formattedSymbol1} ${
-                          parseFloat(token0?.derivedETH) ? '(' + token0USD + ')' : ''
-                        }`
+                      ? `1 ${formattedSymbol0} = ${token0Rate} ${formattedSymbol1} ${'(' + token0USD + ')'}`
                       : '-'}
                   </TYPE.main>
                 </RowFixed>
@@ -310,9 +347,7 @@ function PairPage({ pairAddress, history }) {
                   <TokenLogo address={token1?.id} size={'16px'} />
                   <TYPE.main fontSize={'16px'} lineHeight={1} fontWeight={500} ml={'4px'}>
                     {token0 && token1
-                      ? `1 ${formattedSymbol1} = ${token1Rate} ${formattedSymbol0}  ${
-                          parseFloat(token1?.derivedETH) ? '(' + token1USD + ')' : ''
-                        }`
+                      ? `1 ${formattedSymbol1} = ${token1Rate} ${formattedSymbol0}  ${'(' + token1USD + ')'}`
                       : '-'}
                   </TYPE.main>
                 </RowFixed>
