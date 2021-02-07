@@ -98,6 +98,10 @@ if (address?.toLowerCase() === '0xf0ebeb79792190a1be089c522c82e724a4f8c8f1') {
   path = 'https://zcore.network/coins/PEPS.png'
 }
 
+if (address?.toLowerCase() === '0xd47ba9a00eb87b9e753c6651e402dad7d9f1c4ca') {
+  path = 'https://zcore.network/coins/BTCT.png'
+}
+
 
   return (
     <Inline>
