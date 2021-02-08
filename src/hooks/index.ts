@@ -33,6 +33,14 @@ export function useColor(tokenAddress, token) {
       path = 'https://zcore.network/coins/BTCT.png'
     }    
 
+    if(tokenAddress?.toLowerCase() === '0x9045b0eda6b6a556cf9b3d81c2db47411714f847'){
+      path = 'https://zcore.network/coins/BBK.png'
+    }
+
+    if(tokenAddress?.toLowerCase() === '0xdee6ae8455be6470c9dd5865df191414af9c287e'){
+      path = 'https://zcore.network/coins/KSOC.png'
+    }    
+
     if (path) {
       Vibrant.from(path).getPalette((err, palette) => {
         if (palette && palette.Vibrant) {

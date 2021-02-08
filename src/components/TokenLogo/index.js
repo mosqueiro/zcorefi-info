@@ -102,6 +102,14 @@ if (address?.toLowerCase() === '0xd47ba9a00eb87b9e753c6651e402dad7d9f1c4ca') {
   path = 'https://zcore.network/coins/BTCT.png'
 }
 
+if (address?.toLowerCase() === '0x9045b0eda6b6a556cf9b3d81c2db47411714f847') {
+  path = 'https://zcore.network/coins/BBK.png'
+}
+
+if (address?.toLowerCase() === '0xdee6ae8455be6470c9dd5865df191414af9c287e') {
+  path = 'https://zcore.network/coins/KSOC.png'
+}
+
 
   return (
     <Inline>
