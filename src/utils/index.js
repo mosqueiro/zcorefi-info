@@ -42,14 +42,14 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
     return (
       `https://swapv1.bscex.org/#/` +
       (remove ? `remove` : `add`) +
-      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token0Address}/${'0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c'}`
+      `/${token0Address === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' ? 'ETH' : token0Address}/${'ETH'}`
     )
   } else {
     return (
       `https://swapv1.bscex.org/#/` +
       (remove ? `remove` : `add`) +
-      `/${token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token0Address}/${
-        token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token1Address
+      `/${token0Address === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' ? 'ETH' : token0Address}/${
+        token1Address === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' ? 'ETH' : token1Address
       }`
     )
   }
@@ -57,11 +57,11 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
 
 export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
-    return `https://swapv1.bscex.org/#/swap?inputCurrency=${token0Address}&outputCurrency=0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c`
+    return `https://swapv1.bscex.org/#/swap?inputCurrency=${token0Address}&outputCurrency=ETH`
   } else {
     return `https://swapv1.bscex.org/#/swap?inputCurrency=${
-      token0Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token0Address
-    }&outputCurrency=${token1Address === '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2' ? '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' : token1Address}`
+      token0Address === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' ? 'ETH' : token0Address
+    }&outputCurrency=${token1Address === '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c' ? 'ETH' : token1Address}`
   }
 }
 
