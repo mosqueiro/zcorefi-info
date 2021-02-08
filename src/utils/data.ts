@@ -23,6 +23,10 @@ const TOKEN_OVERRIDES: { [address: string]: { name: string; symbol: string } } =
     name: 'Energi',
     symbol: 'NRGE',
   },
+  '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c': {
+    name: 'Wrapped BNB',
+    symbol: 'BNB',
+  },  
 }
 
 // override tokens with incorrect symbol or names
